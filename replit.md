@@ -16,6 +16,17 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### FrameUI Demo (`artifacts/frame-ui`)
+- React + Vite frontend-only app at `/`
+- Interactive documentation and showcase for FrameUI headless UI library
+- Pages: Home (`/`), Components index (`/components`), individual component pages
+- Headless components in `src/components/frame-ui/`: Modal, Dropdown, Accordion, Tabs, Tooltip, Select, Checkbox, Switch
+- Each component page includes live demo, copy-able code snippet, props table, accessibility notes
+- Dark/light mode support via ThemeProvider
+- Font: DM Sans (sans) + JetBrains Mono (code) via Google Fonts
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages
