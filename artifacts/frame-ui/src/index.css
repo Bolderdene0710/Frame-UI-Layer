@@ -180,3 +180,61 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+/* ── 3D Logo & Animation keyframes ── */
+@keyframes cube-spin {
+  0%   { transform: rotateX(-20deg) rotateY(0deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+@keyframes cube-spin-hero {
+  0%   { transform: rotateX(-18deg) rotateY(0deg) rotateZ(3deg); }
+  100% { transform: rotateX(-18deg) rotateY(360deg) rotateZ(3deg); }
+}
+@keyframes float-a {
+  0%, 100% { transform: translateY(0px) translateZ(0px); }
+  50%       { transform: translateY(-14px) translateZ(4px); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(-8px); }
+  50%       { transform: translateY(8px); }
+}
+@keyframes float-c {
+  0%, 100% { transform: translateY(4px) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes shimmer-pass {
+  0%   { left: -60%; }
+  100% { left: 160%; }
+}
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.3;  transform: scale(1.1); }
+}
+@keyframes orbit-dot {
+  0%   { transform: rotate(0deg)   translateX(44px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(44px) rotate(-360deg); }
+}
+@keyframes orbit-dot-rev {
+  0%   { transform: rotate(0deg)    translateX(60px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(60px) rotate(360deg); }
+}
+
+.cube-scene { perspective: 320px; }
+.cube-inner {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cube-spin 11s linear infinite;
+}
+.cube-inner.hero-spin {
+  animation: cube-spin-hero 9s linear infinite;
+}
+.cube-face {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  backface-visibility: visible;
+}
